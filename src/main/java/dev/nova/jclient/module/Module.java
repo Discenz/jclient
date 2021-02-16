@@ -19,38 +19,16 @@ public class Module {
         this.toggled = false;
     }
 
-    public Module(String name, String description, Category category, int key, boolean toggled, boolean hidden, Setting[] settings) {
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.key = key;
-        this.toggled = toggled;
-        this.hidden = hidden;
-        this.settings = settings;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Category getCategory() {
         return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public int getKey() {
@@ -67,6 +45,22 @@ public class Module {
 
     public void setToggled(boolean toggled) {
         this.toggled = toggled;
+        if(this.toggled) onEnable();
+        else onDisable();
+    }
+
+    public void toggle () {
+        this.toggled = !this.toggled;
+        if(this.toggled) onEnable();
+        else onDisable();
+    }
+
+    public void onEnable () {
+
+    }
+
+    public void onDisable () {
+
     }
 
     public boolean isHidden() {
