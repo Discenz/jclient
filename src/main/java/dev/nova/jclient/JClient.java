@@ -1,7 +1,12 @@
 package dev.nova.jclient;
 
+import dev.nova.jclient.event.Cancellable;
+import dev.nova.jclient.event.ForgeEventsLoader;
 import dev.nova.jclient.manager.CommandManager;
 import dev.nova.jclient.manager.ModuleManager;
+import me.zero.alpine.bus.EventBus;
+import me.zero.alpine.bus.EventManager;
+import me.zero.alpine.listener.Listenable;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,13 +26,18 @@ public class JClient
     public static CommandManager commandManager;
 
     public static final Logger logger = LogManager.getLogger("JC");
+    public static final EventBus eventBus = new EventManager();
+
+    private static ForgeEventsLoader forgeEventsLoader;
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
         logger.info(NAME + " Initializing");
         Display.setTitle(NAME + " " + VERSION);
+        forgeEventsLoader = new ForgeEventsLoader();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
     }
+
 }

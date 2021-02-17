@@ -1,6 +1,5 @@
 package dev.nova.jclient.manager;
 
-
 import dev.nova.jclient.module.Category;
 import dev.nova.jclient.module.Module;
 
@@ -37,4 +36,5 @@ public class ModuleManager {
         }
         return m;
     }
+
 }

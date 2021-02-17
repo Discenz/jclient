@@ -1,8 +1,10 @@
 package dev.nova.jclient.module;
 
+import dev.nova.jclient.JClient;
 import dev.nova.jclient.setting.Setting;
+import me.zero.alpine.listener.Listenable;
 
-public class Module {
+public class Module implements Listenable {
     private String name, description;
     private Category category;
     private int key;
@@ -56,11 +58,11 @@ public class Module {
     }
 
     public void onEnable () {
-
+        JClient.eventBus.subscribe(this);
     }
 
     public void onDisable () {
-
+        JClient.eventBus.unsubscribe(this);
     }
 
     public boolean isHidden() {
