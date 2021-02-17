@@ -2,6 +2,7 @@ package dev.nova.jclient.manager;
 
 import dev.nova.jclient.module.Category;
 import dev.nova.jclient.module.Module;
+import dev.nova.jclient.module.modules.render.Hud;
 
 import java.util.ArrayList;
 
@@ -11,12 +12,12 @@ public class ModuleManager {
     public ModuleManager() {
         modules = new ArrayList<>();
 
-        //modules.add(module);
+        modules.add(new Hud());
     }
 
     public Module getModule (String name) {
         for(Module module: modules) {
-            if(module.getName().equals(name)) {
+            if(module.getName().equalsIgnoreCase(name)) {
                 return module;
             }
         }

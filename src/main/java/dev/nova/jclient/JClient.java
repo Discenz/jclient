@@ -1,12 +1,10 @@
 package dev.nova.jclient;
 
-import dev.nova.jclient.event.Cancellable;
 import dev.nova.jclient.event.ForgeEventsLoader;
 import dev.nova.jclient.manager.CommandManager;
 import dev.nova.jclient.manager.ModuleManager;
 import me.zero.alpine.bus.EventBus;
 import me.zero.alpine.bus.EventManager;
-import me.zero.alpine.listener.Listenable;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

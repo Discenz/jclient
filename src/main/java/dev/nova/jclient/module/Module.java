@@ -3,6 +3,7 @@ package dev.nova.jclient.module;
 import dev.nova.jclient.JClient;
 import dev.nova.jclient.setting.Setting;
 import me.zero.alpine.listener.Listenable;
+import net.minecraft.client.Minecraft;
 
 public class Module implements Listenable {
     private String name, description;
@@ -10,6 +11,8 @@ public class Module implements Listenable {
     private int key;
     private boolean toggled, hidden;
     private Setting[] settings;
+
+    protected Minecraft mc = Minecraft.getMinecraft();
 
     public Module(String name, String description, Category category, Setting... settings) {
         this.name = name;
