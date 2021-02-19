@@ -3,6 +3,7 @@ package dev.nova.jclient.manager;
 import dev.nova.jclient.module.Category;
 import dev.nova.jclient.module.Module;
 import dev.nova.jclient.module.modules.chat.ChatSuffix;
+import dev.nova.jclient.module.modules.chat.NoRntz;
 import dev.nova.jclient.module.modules.render.Hud;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class ModuleManager {
 
         modules.add(new Hud());
         modules.add(new ChatSuffix());
+        modules.add(new NoRntz());
     }
 
     public Module getModule (String name) {
