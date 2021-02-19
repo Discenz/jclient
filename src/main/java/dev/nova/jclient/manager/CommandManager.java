@@ -42,6 +42,8 @@ public class CommandManager implements Listenable {
 
         if(!message.startsWith(JClient.PREFIX)) return;
 
+        event.setCanceled(true);
+
         String[] args = message.split(" ");
         String commandName = args[0].substring(1);
 
@@ -53,7 +55,6 @@ public class CommandManager implements Listenable {
         }
 
         ChatUtil.sendMessage(ChatFormatting.GREEN + commandName + ChatFormatting.WHITE + " is not recognized");
-        event.setCanceled(true);
     });
 
 }

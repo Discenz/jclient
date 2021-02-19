@@ -5,8 +5,8 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.text.TextComponentString;
 
 public class ChatUtil {
-    private static String chatPrefix = "[JC]";
-    private static String chatSuffix;
+    public static String chatPrefix = "[JC]";
+    public static String chatSuffix = " | JClient";
 
     private static final EntityPlayerSP player = Minecraft.getMinecraft().player;
 

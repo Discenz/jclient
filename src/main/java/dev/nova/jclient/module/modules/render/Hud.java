@@ -20,8 +20,10 @@ public class Hud extends Module {
     }
 
     @EventHandler
-    private Listener<RenderGameOverlayEvent> onClientChat = new Listener<>(event -> {
+    private Listener<RenderGameOverlayEvent> onRenderGameOverlay = new Listener<>(event -> {
         String watermark = ChatFormatting.GREEN + JClient.NAME + " " + ChatFormatting.WHITE + JClient.VERSION;
         mc.fontRenderer.drawStringWithShadow(watermark, 2, 2, -1);
     });
+
+    
 }
