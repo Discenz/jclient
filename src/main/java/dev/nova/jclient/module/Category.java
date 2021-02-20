@@ -1,5 +1,5 @@
 package dev.nova.jclient.module;
 
 public enum Category {
-    COMBAT, RENDER, PLAYER, MOVEMENT, CHAT
+    COMBAT, RENDER, PLAYER, MOVEMENT, CHAT, HUD
 }
