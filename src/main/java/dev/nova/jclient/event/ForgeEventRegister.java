@@ -9,9 +9,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 //This class posts Forge Events to JClient's Event Bus
 
-public class ForgeEventsLoader {
+public class ForgeEventRegister {
 
-    public ForgeEventsLoader () {
+    public ForgeEventRegister() {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -21,7 +21,8 @@ public class ForgeEventsLoader {
     }
 
     @SubscribeEvent
-    public void onRenderGameOverlay(RenderGameOverlayEvent event) {
+    public void onRenderGameOverlay(RenderGameOverlayEvent.Post event) {
+        if(event.isCanceled()) return;
         JClient.eventBus.post(event);
     }
 

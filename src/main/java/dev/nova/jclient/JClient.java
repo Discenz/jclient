@@ -1,6 +1,6 @@
 package dev.nova.jclient;
 
-import dev.nova.jclient.event.ForgeEventsLoader;
+import dev.nova.jclient.event.ForgeEventRegister;
 import dev.nova.jclient.manager.CommandManager;
 import dev.nova.jclient.manager.ModuleManager;
 import me.zero.alpine.bus.EventBus;
@@ -26,14 +26,14 @@ public class JClient
     public static final Logger logger = LogManager.getLogger("JC");
     public static final EventBus eventBus = new EventManager();
 
-    private static ForgeEventsLoader forgeEventsLoader;
+    private static ForgeEventRegister forgeEventRegister;
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
         logger.info(NAME + " Initializing");
         Display.setTitle(NAME + " " + VERSION);
-        forgeEventsLoader = new ForgeEventsLoader();
+        forgeEventRegister = new ForgeEventRegister();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
     }
