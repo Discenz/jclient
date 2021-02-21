@@ -8,11 +8,17 @@ import dev.nova.jclient.util.ChatUtil;
 
 public class Toggle extends Command {
     public Toggle () {
-        super("Toggle", "Turn modules on and off");
+        super("Toggle", "Turn modules on and off", "[module]");
     }
 
     @Override
     public void run (String[] args){
+
+        if(args.length < 2) {
+            ChatUtil.sendMessage(getUsageChat());
+            return;
+        }
+
         Module module = JClient.moduleManager.getModule(args[1]);
 
         if(module == null) {
@@ -22,8 +28,8 @@ public class Toggle extends Command {
 
         module.toggle();
 
-        String state = "disabled";
-        if (module.isToggled()) state = "enabled";
+        String state = ChatFormatting.RED + "disabled";
+        if (module.isToggled()) state = ChatFormatting.GREEN + "enabled";
 
         ChatUtil.sendMessage(ChatFormatting.GREEN + module.getName() + ChatFormatting.WHITE + " was " + state);
     }
