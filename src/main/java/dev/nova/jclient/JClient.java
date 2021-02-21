@@ -1,11 +1,10 @@
 package dev.nova.jclient;
 
-import dev.nova.jclient.event.ForgeEventRegister;
 import dev.nova.jclient.manager.CommandManager;
+import dev.nova.jclient.manager.EventManager;
 import dev.nova.jclient.manager.KeybindManager;
 import dev.nova.jclient.manager.ModuleManager;
 import me.zero.alpine.bus.EventBus;
-import me.zero.alpine.bus.EventManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -26,16 +25,14 @@ public class JClient
     public static KeybindManager keybindManager;
 
     public static final Logger logger = LogManager.getLogger("JC");
-    public static final EventBus eventBus = new EventManager();
-
-    private static ForgeEventRegister forgeEventRegister;
+    public static EventBus eventBus;
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
         logger.info(NAME + " Initializing");
         Display.setTitle(NAME + " " + VERSION);
-        forgeEventRegister = new ForgeEventRegister();
+        eventBus = new EventManager();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         keybindManager = new KeybindManager();
