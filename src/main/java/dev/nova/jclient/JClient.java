@@ -24,18 +24,21 @@ public class JClient
     public static CommandManager commandManager;
     public static KeybindManager keybindManager;
 
-    public static final Logger logger = LogManager.getLogger("JC");
+    public static Logger logger;
     public static EventBus eventBus;
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        logger = LogManager.getLogger("JC");
         logger.info(NAME + " Initializing");
-        Display.setTitle(NAME + " " + VERSION);
+
         eventBus = new EventManager();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
         keybindManager = new KeybindManager();
+
+        Display.setTitle(NAME + " " + VERSION);
     }
 
 }

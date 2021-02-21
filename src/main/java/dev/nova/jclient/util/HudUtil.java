@@ -18,12 +18,12 @@ public class HudUtil {
         ScaledResolution scaledResolution = new ScaledResolution(Minecraft.getMinecraft());
 
         if(placement == HudPlacement.BOTLEFT) {
-            HudPosition hudPosition = new HudPosition(padding, scaledResolution.getScaledHeight() - BOTLEFT - padding - height);
+            HudPosition hudPosition = new HudPosition(padding, scaledResolution.getScaledHeight() - BOTLEFT - height);
             BOTLEFT += padding + height;
             return hudPosition;
         }
         else if(placement == HudPlacement.BOTRIGHT) {
-            HudPosition hudPosition = new HudPosition(scaledResolution.getScaledWidth()-padding-width, scaledResolution.getScaledHeight()-BOTRIGHT-padding-height);
+            HudPosition hudPosition = new HudPosition(scaledResolution.getScaledWidth()-padding-width, scaledResolution.getScaledHeight()-BOTRIGHT-height);
             BOTRIGHT += padding + height;
             return hudPosition;
         }
