@@ -3,8 +3,7 @@ package dev.nova.jclient.manager;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import dev.nova.jclient.JClient;
 import dev.nova.jclient.command.Command;
-import dev.nova.jclient.command.commands.Bind;
-import dev.nova.jclient.command.commands.Toggle;
+import dev.nova.jclient.command.commands.*;
 import dev.nova.jclient.util.ChatUtil;
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listenable;
@@ -22,6 +21,9 @@ public class CommandManager implements Listenable {
 
         commands.add(new Toggle());
         commands.add(new Bind());
+        commands.add(new Set());
+        commands.add(new Get());
+        commands.add(new Info());
 
     }
 
