@@ -22,14 +22,14 @@ public class Toggle extends Command {
         Module module = JClient.moduleManager.getModule(args[1]);
 
         if(module == null) {
-            ChatUtil.sendMessage(ChatFormatting.GREEN + args[1] + " is not a module");
+            ChatUtil.sendMessage(ChatFormatting.GREEN + args[1] + ChatFormatting.WHITE + " is not a module");
             return;
         }
 
         module.toggle();
 
-        String state = ChatFormatting.RED + "disabled";
-        if (module.isToggled()) state = ChatFormatting.GREEN + "enabled";
+        String state = "disabled";
+        if (module.isToggled()) state = "enabled";
 
         ChatUtil.sendMessage(ChatFormatting.GREEN + module.getName() + ChatFormatting.WHITE + " was " + state);
     }

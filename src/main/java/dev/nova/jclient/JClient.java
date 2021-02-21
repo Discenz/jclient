@@ -2,6 +2,7 @@ package dev.nova.jclient;
 
 import dev.nova.jclient.event.ForgeEventRegister;
 import dev.nova.jclient.manager.CommandManager;
+import dev.nova.jclient.manager.KeybindManager;
 import dev.nova.jclient.manager.ModuleManager;
 import me.zero.alpine.bus.EventBus;
 import me.zero.alpine.bus.EventManager;
@@ -22,6 +23,7 @@ public class JClient
 
     public static ModuleManager moduleManager;
     public static CommandManager commandManager;
+    public static KeybindManager keybindManager;
 
     public static final Logger logger = LogManager.getLogger("JC");
     public static final EventBus eventBus = new EventManager();
@@ -36,6 +38,7 @@ public class JClient
         forgeEventRegister = new ForgeEventRegister();
         moduleManager = new ModuleManager();
         commandManager = new CommandManager();
+        keybindManager = new KeybindManager();
     }
 
 }
